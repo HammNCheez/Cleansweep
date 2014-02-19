@@ -1,2 +1,3 @@
 # Module hello_gwt
 # RPC service class, partial path of RPC policy file
+com.hammond.helloGWT.client.GreetingService, ED5EBE39A869114346A58AAFBB211B8D.gwt.rpc
