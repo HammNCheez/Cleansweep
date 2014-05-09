@@ -1,0 +1,6 @@
+id,taskName,description,cost,duration
+1,"Take out trash","Gather all trash from the house. Put it into the kitchen trashbag. Take trash bag to outside trash can. Replace trash bag in kitchen and put all trash cans back throughout the house.",0.25,10
+2,"Clean Dishes","Collect all of the dirty dishes that are not already in the sink. Put the dirty dishes into the dishwasher. If dishwasher is full run it.",0.33,15
+3,"Empty Dishwasher","Empty clean dishes from dishwasher and put them where they belong.",0.25,10
+4,"Vacuum bedrooms","Vacuum the 3 bedrooms.",0.50,20
+5,"Mop Kitchen","Fill sink with water and floor cleaner. Use mop to clean the kitchen floor.",0.33,20
