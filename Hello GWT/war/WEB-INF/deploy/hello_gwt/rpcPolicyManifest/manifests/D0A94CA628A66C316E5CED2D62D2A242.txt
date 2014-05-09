@@ -1,2 +1,0 @@
-serviceClass: com.hammond.helloGWT.client.GreetingService
-path: ED5EBE39A869114346A58AAFBB211B8D.gwt.rpc
