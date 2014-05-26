@@ -7,7 +7,7 @@ create table tasks (
     description varchar(255) not null,
     cost decimal(6 , 2 ) not null,
     duration smallint not null
-);
+) ENGINE=InnoDB;
 
 create table scheduled_tasks (
     id serial primary key,
@@ -17,19 +17,19 @@ create table scheduled_tasks (
     reviewed_date datetime,
     assignee_id bigint unsigned,
     reviewer_id bigint unsigned
-);
+) ENGINE=InnoDB;
 
-create table reoccuring_tasks (
+create table reoccurring_tasks (
     id serial primary key,
     task_id bigint unsigned not null,
     frequency char(1) not null,
     day_number smallint,
     task_interval smallint,
-    week_of_month smallint,
+    week_number smallint,
+	start_date date not null,
     end_date date,
-    occurances smallint,
-    start_date date not null
-);
+    occurrances smallint
+) ENGINE=InnoDB;
 
 create table users (
     id serial primary key,
@@ -39,7 +39,7 @@ create table users (
     password_hash char(64) not null,
     access_level smallint not null,
     allowance_total decimal(6 , 2 )
-);
+) ENGINE=InnoDB;
 
 alter table scheduled_tasks
 add constraint fk_scheduled_task_id
@@ -56,7 +56,7 @@ add constraint fk_reviewer_id
 foreign key (reviewer_id)
 references users(id);
 
-alter table reoccuring_tasks
+alter table reoccurring_tasks
 add constraint fk_reoccuring_task_id
 foreign key (task_id)
 references tasks(id);
