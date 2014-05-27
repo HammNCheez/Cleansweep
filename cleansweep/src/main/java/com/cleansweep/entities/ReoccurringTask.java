@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,6 +18,10 @@ public class ReoccurringTask {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+
+	@OneToOne
+	@JoinColumn(name = "task_id")
+	private Task task;
 
 	@Column(name = "frequency")
 	private String frequency;
@@ -37,9 +43,6 @@ public class ReoccurringTask {
 
 	@Column(name = "occurrances")
 	private Integer occurrances;
-
-	// t.task_name
-	// t.description
 
 	public int getId() {
 		return id;
@@ -103,21 +106,5 @@ public class ReoccurringTask {
 
 	public void setOccurrances(Integer occurrances) {
 		this.occurrances = occurrances;
-	}
-
-	public String toJSON() {
-		StringBuilder sb = new StringBuilder();
-
-		sb.append("{");
-		sb.append("   Frequency: " + getFrequency() + ",\n");
-		sb.append("   DayNumber: " + getDayNumber() + ",\n");
-		sb.append("TaskInterval: " + getTaskInterval() + ",\n");
-		sb.append("  WeekNumber: " + getWeekNumber() + ",\n");
-		sb.append("   StartDate: " + getStartDate() + ",\n");
-		sb.append("     EndDate: " + getEndDate() + ",\n");
-		sb.append(" Occurrances: " + getOccurrances());
-		sb.append("}");
-
-		return sb.toString();
 	}
 }
