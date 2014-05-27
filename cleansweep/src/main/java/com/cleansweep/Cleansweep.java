@@ -7,6 +7,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import com.cleansweep.entities.ReoccurringTask;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Cleansweep {
 
@@ -32,13 +34,29 @@ public class Cleansweep {
 	protected void getListOfReoccurringTasks() {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		entityManager.getTransaction().begin();
+		
+		ObjectMapper mapper = new ObjectMapper();
+		
+//		List<User> result = entityManager.createQuery("from User", User.class)
+//		    .getResultList();
+//		for (User user : result) {
+//			try {
+//				System.out.println("User " + mapper.writeValueAsString(user) + "\n");
+//			} catch (JsonProcessingException e) {
+//				e.printStackTrace();
+//			}
+//		}
+		
 		List<ReoccurringTask> result = entityManager.createQuery("from ReoccurringTask", ReoccurringTask.class)
 		    .getResultList();
 		for (ReoccurringTask task : result) {
-			System.out.println("Reoccurring Task " + task.toJSON() + "\n");
+			try {
+				System.out.println("Reoccurring Task " + mapper.writeValueAsString(task) + "\n");
+			} catch (JsonProcessingException e) {
+				e.printStackTrace();
+			}
 		}
-//		ReoccurringTask task = entityManager.find(ReoccurringTask.class, 1);
-//		System.out.println("Reoccurring Task " + task.toJSON());
+
 		entityManager.getTransaction().commit();
 		entityManager.close();
 	}
