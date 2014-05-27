@@ -5,3 +5,14 @@
 *.war
 *.ear
 .metadata/
+RemoteSystemsTempFiles/.project
+Servers/.project
+Servers/.settings/org.eclipse.wst.server.core.prefs
+Servers/VMware vFabric tc Server Developer Edition v2.9-config/catalina.policy
+Servers/VMware vFabric tc Server Developer Edition v2.9-config/catalina.properties
+Servers/VMware vFabric tc Server Developer Edition v2.9-config/context.xml
+Servers/VMware vFabric tc Server Developer Edition v2.9-config/jmxremote.access
+Servers/VMware vFabric tc Server Developer Edition v2.9-config/jmxremote.password
+Servers/VMware vFabric tc Server Developer Edition v2.9-config/server.xml
+Servers/VMware vFabric tc Server Developer Edition v2.9-config/tomcat-users.xml
+Servers/VMware vFabric tc Server Developer Edition v2.9-config/web.xml
