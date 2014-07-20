@@ -37,8 +37,7 @@ create table users (
     first_name varchar(50) not null,
     last_name varchar(50) not null,
     username varchar(30) not null,
-    password_hash char(64) not null,
-	salt char(16) not null,
+    password_hash char(128) not null,
     access_level smallint not null,
     allowance_total decimal(6 , 2 )
 ) ENGINE=InnoDB;

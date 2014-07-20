@@ -29,9 +29,6 @@ public class User {
 	@Column(name = "password_hash")
 	private String password;
 
-	@Column(name = "salt")
-	private String salt;
-
 	@Column(name = "access_level")
 	private int accessLevel;
 
@@ -76,14 +73,6 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public String getSalt() {
-		return salt;
-	}
-
-	public void setSalt(String salt) {
-		this.salt = salt;
 	}
 
 	public int getAccessLevel() {
